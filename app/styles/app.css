@@ -6,3 +6,14 @@
   font-size: .5rem;
   width: 3.5rem;
 }
+
+.dropDownsColor {
+  color: #000000 !Important;
+  background-color: #FFFFFF !Important;
+  border-color: #919191 !important;
+}
+
+.forceOutline {
+  color: #212529 !Important;
+  background-color: transparent !Important;
+}

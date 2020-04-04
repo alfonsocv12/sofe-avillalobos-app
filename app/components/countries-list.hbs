@@ -9,13 +9,20 @@
                  placeholder="Search country" {{on "input" this.change}}>
         </div>
         <div class="col-4">
-          <div class="dropdown">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
-                    id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+          <BsDropdown @closeOnMenuClick={{false}} as |dd|>
+            <dd.button class="forceOutline">
               Sort By
-            </button>
-          </div>
+            </dd.button>
+            <dd.menu class="list-group" as |ddm|>
+              {{#each this.sortByItems as |item|}}
+                <ddm.item>
+                  <a class="dropDownsColor list-group-item" onclick={{action "changeItems" item dd.closeDropdown}}>
+                    {{item.name}}
+                  </a>
+                </ddm.item>
+              {{/each}}
+            </dd.menu>
+          </BsDropdown>
         </div>
       </div>
     </div>
