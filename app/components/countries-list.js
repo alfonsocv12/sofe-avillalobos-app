@@ -29,6 +29,14 @@ export default class CountriesListComponent extends Component {
     {
       "name": "Total Recoveries",
       "query": "recovered"
+    },
+    {
+      "name": "Currently Active",
+      "query": "active"
+    },
+    {
+      "name": "Critical",
+      "query": "critical"
     }
   ]
 
