@@ -1,0 +1,8 @@
+.scrollClass {
+  overflow-y: scroll;
+}
+
+.little-bages {
+  font-size: .5rem;
+  width: 3.5rem;
+}
