@@ -1,15 +1,15 @@
-<div class="col-4">
+<div class="col-12 col-md-4">
   <div class="card shadow">
     <div class="card-body" style="height: 35rem;">
       <h4 class="card-title">{{@title}}</h4>
       <div class="container">
         <div class="row">
-          <div class="col-8 input-group mb-3">
+          <div class="col-sm-8 col-md-12 col-lg-8 input-group mb-3">
             <input type="text" name="query"
                    value="" class="form-control"
                    placeholder="Search country" {{on "input" this.change}}>
           </div>
-          <div class="col-4">
+          <div class="col-sm-4 col-md-12 col-lg-4">
             <BsDropdown @closeOnMenuClick={{false}} as |dd|>
               <dd.button class="forceOutline">
                 Sort By
