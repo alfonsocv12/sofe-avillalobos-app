@@ -1,92 +1,26 @@
-<div class="container ciner">
-  <div class="row">
-    <div class="col-3 card">
+{{#each this.globalInfo as |data|}}
+  <div class="col-3">
+    <div class="col card">
       <div class="card-body">
         <div class="row">
           <h4 class="card-tritle">Infections</h4>
         </div>
         <div class="row">
           <div class="col-8">
-            <span class="badge badge-primary">
-              {{this.globalInfo.casesIncrease}}~>
+            <span class="badge badge-{{data.typeText}}">
+              {{data.casesIncrease}}~>
             </span>
           </div>
           <div class="col-4">
-            <div class="row text-primary">
-              <h4>{{this.globalInfo.cases}}</h4>
+            <div class="row text-{{data.typeText}}">
+              <h5>{{data.cases}}</h5>
             </div>
             <div class="row card-subtitle">
-              <small>{{this.globalInfo.todayCases}} today</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-3 card">
-      <div class="card-body">
-        <div class="row">
-          <h4 class="card-tritle">Deaths</h4>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <span class="badge badge-danger">
-              {{this.globalInfo.dethIncrease}}~>
-            </span>
-          </div>
-          <div class="col-4">
-            <div class="row text-danger">
-              <h4>{{this.globalInfo.deaths}}</h4>
-            </div>
-            <div class="row card-subtitle">
-              <small>{{this.globalInfo.todayDeaths}} today</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-3 card">
-      <div class="card-body">
-        <div class="row">
-          <h4 class="card-tritle">Recovered</h4>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <span class="badge badge-success">
-              {{this.globalInfo.recoveredIncrease}}~>
-            </span>
-          </div>
-          <div class="col-4">
-            <div class="row text-success">
-              <h4>{{this.globalInfo.recovered}}</h4>
-            </div>
-            <div class="row card-subtitle">
-              <small>{{this.globalInfo.remainingSick}} remaining</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-3 card">
-      <div class="card-body">
-        <div class="row">
-          <h4 class="card-tritle">Critical</h4>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <span class="badge badge-warning">
-              {{this.globalInfo.criticalIncrease}}~>
-            </span>
-          </div>
-          <div class="col-4">
-            <div class="row text-warning">
-              <h4> {{this.globalInfo.totalCritical}} </h4>
-            </div>
-            <div class="row card-subtitle">
-              <small>{{this.globalInfo.casesPerMillion}} per million</small>
+              <span class="little-bages">{{data.extraData}}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+{{/each}}
