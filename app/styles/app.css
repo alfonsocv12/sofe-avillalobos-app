@@ -1,0 +1,27 @@
+.scrollClass {
+  overflow-y: scroll;
+}
+
+.little-bages {
+  font-size: .5rem;
+  width: 3.5rem;
+}
+
+.dropDownsColor {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+  border-color: #919191 !important;
+}
+
+.forceOutline {
+  color: #212529 !important;
+  background-color: transparent !important;
+}
+
+.container {
+  max-width: 90%;
+}
+
+.ciner {
+  max-width: 100% !important;
+}
