@@ -7,6 +7,12 @@ module.exports = function(defaults) {
     'ember-bootstrap': {
       'bootstrapVersion': 4,
       'importBootstrapCSS': true
+    },
+    'amcharts4':{
+      'files':[
+          "charts",
+          "themes/animated"
+      ]
     }
   });
 
