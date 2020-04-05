@@ -25,6 +25,9 @@
     <div class="row mb-3">
       <DatosGlobales @globalInfo={{this.countryInfo}}/>
     </div>
+    <div class="row mb-3">
+      <DailyGraphic @timeline={{this.countryInfo.country}}/>
+    </div>
   {{else}}
     <div class="row mb-3">
       <div class="col-12">
@@ -33,6 +36,9 @@
     </div>
     <div class="row mb-3">
       <DatosGlobales @globalInfo={{this.countryInfo}}/>
+    </div>
+    <div class="row mb-3">
+      <DailyGraphic @timeline={{this.countryInfo.country}}/>
     </div>
   {{/if}}
   <hr class="lineFresa">

@@ -24,7 +24,6 @@ export default class CountryInfoComponent extends Component {
   }
 
   setCountryData(data){
-    console.log(data);
     data['totalCritical'] = data.critical
     data['remainingSick'] = data.cases - (data.recovered + data.deaths)
     data['casesPerMillion'] = data.casesPerOneMillion
