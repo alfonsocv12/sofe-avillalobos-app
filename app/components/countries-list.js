@@ -54,6 +54,7 @@ export default class CountriesListComponent extends Component {
 
   @action
   async changeItems(item, closeDropdown){
+    closeDropdown();
     this.countries = await jQuery.get(
       "http://api.coronastatistics.live/countries/?sort="+item.query
     );
