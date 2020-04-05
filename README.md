@@ -3,6 +3,8 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+This is a litte ember application for the sofe 2020 
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
