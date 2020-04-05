@@ -47,8 +47,6 @@ export default class IndexRoute extends Route {
     return {
       "casesIncrease": ((data.todayCases/data.cases)*100).toFixed(2)+"%",
       "dethIncrease": ((data.todayDeaths/data.deaths)*100).toFixed(2)+"%"
-      // "recoveredIncrease": ((data.todadata.recovered))
-      // "criticalIncrease": data.totalCritical
     }
   }
 }

@@ -1,57 +1,59 @@
-<div class="card" style="width: 23rem;">
-  <div class="card-body" style="height: 35rem;">
-    <h4 class="card-title">{{@title}}</h4>
-    <div class="container">
-      <div class="row">
-        <div class="col-8 input-group mb-3">
-          <input type="text" name="query"
-                 value="" class="form-control"
-                 placeholder="Search country" {{on "input" this.change}}>
-        </div>
-        <div class="col-4">
-          <BsDropdown @closeOnMenuClick={{false}} as |dd|>
-            <dd.button class="forceOutline">
-              Sort By
-            </dd.button>
-            <dd.menu class="list-group" as |ddm|>
-              {{#each this.sortByItems as |item|}}
-                <ddm.item>
-                  <a class="dropDownsColor list-group-item" onclick={{action "changeItems" item dd.closeDropdown}}>
-                    {{item.name}}
-                  </a>
-                </ddm.item>
-              {{/each}}
-            </dd.menu>
-          </BsDropdown>
+<div class="col-4">
+  <div class="card" style="width: 23rem;">
+    <div class="card-body">
+      <h4 class="card-title">{{@title}}</h4>
+      <div class="container">
+        <div class="row">
+          <div class="col-8 input-group mb-3">
+            <input type="text" name="query"
+                   value="" class="form-control"
+                   placeholder="Search country" {{on "input" this.change}}>
+          </div>
+          <div class="col-4">
+            <BsDropdown @closeOnMenuClick={{false}} as |dd|>
+              <dd.button class="forceOutline">
+                Sort By
+              </dd.button>
+              <dd.menu class="list-group" as |ddm|>
+                {{#each this.sortByItems as |item|}}
+                  <ddm.item>
+                    <a class="dropDownsColor list-group-item" onclick={{action "changeItems" item dd.closeDropdown}}>
+                      {{item.name}}
+                    </a>
+                  </ddm.item>
+                {{/each}}
+              </dd.menu>
+            </BsDropdown>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="scrollClass" style="height: 27rem;">
-      <ul class="list-group list-group-flush" >
-        {{#each this.countries as |country|}}
-          <div class="list-group-item container">
-            <div class="row">
-              <h5 class="col-9">{{country.country}}</h5>
-              <div class="col-3">
-                <div class="text-left text-primary little-bages">
-                  + {{country.todayCases}} Cases
+      <div class="scrollClass" style="height: 27rem;">
+        <ul class="list-group list-group-flush" >
+          {{#each this.countries as |country|}}
+            <div class="list-group-item container">
+              <div class="row">
+                <h5 class="col-9">{{country.country}}</h5>
+                <div class="col-3">
+                  <div class="text-left text-primary little-bages">
+                    + {{country.todayCases}} Cases
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <p class="col-9 card-text" style="font-size: .8rem;">
+                  <span class="text-primary"> {{country.cases}} cases </span> &
+                  <span class="text-danger"> {{country.deaths}} Deaths</span>
+                </p>
+                <div class="col-3">
+                  <div class="text-left text-danger little-bages">
+                    + {{country.todayDeaths}} Deaths
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <p class="col-9 card-text" style="font-size: .8rem;">
-                <span class="text-primary"> {{country.cases}} cases </span> &
-                <span class="text-danger"> {{country.deaths}} Deaths</span>
-              </p>
-              <div class="col-3">
-                <div class="text-left text-danger little-bages">
-                  + {{country.todayDeaths}} Deaths
-                </div>
-              </div>
-            </div>
-          </div>
-        {{/each}}
-      </ul>
+          {{/each}}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
