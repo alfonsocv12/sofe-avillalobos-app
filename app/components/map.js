@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 import { A } from '@ember/array';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
@@ -10,7 +11,8 @@ import Fuse from 'fuse';
 am4core.useTheme(am4themes_animated);
 
 export default class MapComponent extends Component {
-  @tracked map = this.loadMap();
+  @tracked map = this.loadMap("cases");
+
   countryCodes = {
     'Afghanistan': 'AF',
     'Aland Islands': 'AX',
@@ -273,14 +275,39 @@ export default class MapComponent extends Component {
     ]
   });
 
+  @tracked mapOptions = [
+    {
+      "option": "cases",
+      "color": "primary"
+    },
+    {
+      "option": "deaths",
+      "color": "danger"
+    },
+    {
+      "option": "critical",
+      "color": "warning"
+    },
+    {
+      "option": "recovered",
+      "color": "success"
+    }
+  ]
+
   init() {
     this._super(...arguments);
     this.chart = null;
   }
 
-  loadMap(){
+  loadMap(option){
     let color = "#21AFDD";
-    let option = "cases";
+    if (option == "recovered") {
+      color = "#10c469";
+    } else if (option == "critical") {
+      color = "#f9c851";
+    } else if (option == "deaths") {
+      color = "#ff5b5b";
+    }
     let mapData = [];
 
     this.fuse.list.forEach(element => {
@@ -390,5 +417,11 @@ export default class MapComponent extends Component {
       this.chart.dispose();
     }
     this._super(...arguments);
+  }
+
+  @action
+  changeMap(option){
+    console.log('entro');
+    this.loadMap(option.option)
   }
 }
