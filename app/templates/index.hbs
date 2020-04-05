@@ -9,11 +9,11 @@
     <CountriesList @title="Affected countries" @countries={{@model.countries}}/>
     <Map @countries={{@model.countries}}/>
   </div>
+  <div class="row md-3">
+    <CountryInfo @countries={{@model.countries}}/>
+  </div>
   <div class="row mb-3">
     <DailyGraphic/>
     <CackeGraph @countries={{@model.countries}}/>
-  </div>
-  <div class="row md-3">
-    <CountryInfo/>
   </div>
 </div>
