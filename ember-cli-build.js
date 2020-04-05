@@ -11,7 +11,9 @@ module.exports = function(defaults) {
     'amcharts4':{
       'files':[
           "charts",
-          "themes/animated"
+          "themes/animated",
+          "maps",
+          "geodata/worldLow"
       ]
     }
   });
