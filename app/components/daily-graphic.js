@@ -10,22 +10,40 @@ am4core.useTheme(am4themes_animated);
 export default class DailyGraphicComponent extends Component {
   @tracked activateLineChart = this.loadLineChart(false);
   timeLine = this.getTimeLineInformation();
+  @tracked query = "";
   caseData = [];
 
   async getTimeLineInformation(){
-    return await jQuery.get('http://api.coronastatistics.live/timeline/global')
+    this.query = (this.args.timeline ? this.args.timeline : 'Global');
+    console.log(this.query);
+    return await jQuery.get('http://api.coronastatistics.live/timeline/'+this.query)
   }
 
   async loadLineChart(chartType){
-    const timeline = await this.timeLine;
-    Object.keys(timeline).forEach(key => {
-      this.caseData.push({
-        date: new Date(key),
-        cases: timeline[key].cases,
-        recoveries: timeline[key].recovered,
-        deaths: timeline[key].deaths
+    if(this.args.timeline){
+      let timeline = await this.timeLine;
+      timeline = timeline.data.timeline
+      Object.keys(timeline).forEach(key => {
+        this.caseData.push({
+          date: new Date(timeline[key].date),
+          cases: timeline[key].cases,
+          recoveries: timeline[key].recovered,
+          deaths: timeline[key].deaths
+        });
       });
-    });
+    }else{
+      const timeline = await this.timeLine;
+      Object.keys(timeline).forEach(key => {
+        this.caseData.push({
+          date: new Date(key),
+          cases: timeline[key].cases,
+          recoveries: timeline[key].recovered,
+          deaths: timeline[key].deaths
+        });
+      });
+    }
+
+    console.log(this.caseData);
 
     this.caseData.push({
       date: new Date().getTime(),
@@ -34,7 +52,7 @@ export default class DailyGraphicComponent extends Component {
       deaths: this.totalDeaths
     });
 
-    let chart = am4core.create("dailyGraph", am4charts.XYChart);
+    let chart = am4core.create("dailyGraph"+this.query, am4charts.XYChart);
     chart.numberFormatter.numberFormat = "#a";
     chart.numberFormatter.bigNumberPrefixes = [
       { "number": 1e+3, "suffix": "K" },

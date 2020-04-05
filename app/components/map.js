@@ -421,7 +421,6 @@ export default class MapComponent extends Component {
 
   @action
   changeMap(option){
-    console.log('entro');
     this.loadMap(option.option)
   }
 }

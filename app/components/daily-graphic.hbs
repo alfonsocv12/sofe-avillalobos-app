@@ -1,10 +1,19 @@
 <div class="col-12 col-lg-8">
   <div class="card shadow">
     <div class="card-body" style="height: 25rem;">
-      <h4 class="card-title"> Infections History</h4>
+      <h4 class="card-title">
+        Infections History 
+        {{#if this.args.timeline}}
+          {{this.args.timeline}}
+        {{/if}}
+      </h4>
       <div class="row ">
         <div class="col-12">
-          <div id="dailyGraph" style="height: 20rem;">{{this.activateLineChart}}</div>
+          {{#if this.args.timeline}}
+            <div id="dailyGraph{{this.args.timeline}}" style="height: 20rem;">{{this.activateLineChart}}</div>
+          {{else}}
+            <div id="dailyGraphGlobal" style="height: 20rem;">{{this.activateLineChart}}</div>
+          {{/if}}
         </div>
       </div>
     </div>
