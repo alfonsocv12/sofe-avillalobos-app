@@ -42,14 +42,15 @@ export default class CountriesListComponent extends Component {
 
   @action
   change(query){
-    query = query.target.value.toLowerCase();
-    this.countries = A(this.args.countries.filter(
-      obj => {
-        if(obj.country.toLowerCase().includes(query)){
-          return obj
-        }
-      }
-    ));
+    console.log(this.args.countries);
+    // query = query.target.value.toLowerCase();
+    // this.countries = A(this.args.countries.filter(
+    //   obj => {
+    //     if(obj.country.toLowerCase().includes(query)){
+    //       return obj
+    //     }
+    //   }
+    // ));
   }
 
   @action
