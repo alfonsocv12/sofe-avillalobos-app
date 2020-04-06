@@ -18,7 +18,7 @@ export default class SingleCountryGraphComponent extends Component {
     chart.data.push({
       type: 'Recoveries',
       number: this.data.recovered,
-      "color": am4core.color("#10c469")
+      "color": am4core.color("#80e27e")
     });
     chart.data.push({
       type: 'Deaths',
