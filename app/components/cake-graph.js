@@ -37,8 +37,6 @@ export default class CakeGraphComponent extends Component {
     pieSeries.dataFields.category = "country";
     pieSeries.labels.template.disabled = true;
     pieSeries.ticks.template.disabled = true;
-    pieSeries.slices.template.strokeWidth = 1;
-    pieSeries.slices.template.strokeOpacity = 1;
     this.pieChart = chart;
   }
 
