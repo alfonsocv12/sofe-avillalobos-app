@@ -13,28 +13,32 @@ export default class DatosGlobalesComponent extends Component {
         "casesIncrease": data.casesIncrease,
         "cases": data.cases,
         "typeText": "primary",
-        "extraData": data.todayCases+" today"
+        "extraData": data.todayCases+" today",
+        "icon": "lungs-virus"
       },
       {
         "title":"Deaths",
         "casesIncrease": data.dethIncrease,
         "cases": data.deaths,
         "typeText": "danger",
-        "extraData": data.todayDeaths+" today"
+        "extraData": data.todayDeaths+" today",
+        "icon": "skull-crossbones"
       },
       {
         "title": "Recovered",
         "casesIncrease": data.recoveredIncrease,
         "cases": data.recovered,
         "typeText": "success",
-        "extraData": data.remainingSick+" sick"
+        "extraData": data.remainingSick+" sick",
+        "icon": "virus-slash"
       },
       {
         "title": "Critical",
         "casesIncrease": data.criticalIncrease,
         "cases": data.totalCritical,
         "typeText": "warning",
-        "extraData": data.casesPerMillion+" *M"
+        "extraData": data.casesPerMillion+" *M",
+        "icon": "exclamation"
       }
     ]);
   }
