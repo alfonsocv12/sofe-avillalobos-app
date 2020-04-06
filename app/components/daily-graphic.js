@@ -15,7 +15,6 @@ export default class DailyGraphicComponent extends Component {
 
   async getTimeLineInformation(){
     this.query = (this.args.timeline ? this.args.timeline : 'Global');
-    console.log(this.query);
     return await jQuery.get('http://api.coronastatistics.live/timeline/'+this.query)
   }
 
@@ -42,8 +41,6 @@ export default class DailyGraphicComponent extends Component {
         });
       });
     }
-
-    console.log(this.caseData);
 
     this.caseData.push({
       date: new Date().getTime(),
