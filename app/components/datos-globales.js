@@ -11,35 +11,39 @@ export default class DatosGlobalesComponent extends Component {
       {
         "title":"Infections",
         "casesIncrease": data.casesIncrease,
-        "cases": data.cases,
+        "cases": this.numberWithCommas(data.cases),
         "typeText": "primary",
-        "extraData": data.todayCases+" today",
+        "extraData": this.numberWithCommas(data.todayCases)+" today",
         "icon": "lungs-virus"
       },
       {
         "title":"Deaths",
         "casesIncrease": data.dethIncrease,
-        "cases": data.deaths,
+        "cases": this.numberWithCommas(data.deaths),
         "typeText": "danger",
-        "extraData": data.todayDeaths+" today",
+        "extraData": this.numberWithCommas(data.todayDeaths)+" today",
         "icon": "skull-crossbones"
       },
       {
         "title": "Recovered",
         "casesIncrease": data.recoveredIncrease,
-        "cases": data.recovered,
+        "cases": this.numberWithCommas(data.recovered),
         "typeText": "success",
-        "extraData": data.remainingSick+" sick",
+        "extraData": this.numberWithCommas(data.remainingSick)+" sick",
         "icon": "virus-slash"
       },
       {
         "title": "Critical",
         "casesIncrease": data.criticalIncrease,
-        "cases": data.totalCritical,
+        "cases": this.numberWithCommas(data.totalCritical),
         "typeText": "warning",
-        "extraData": data.casesPerMillion+" *M",
+        "extraData": this.numberWithCommas(data.casesPerMillion)+" *M",
         "icon": "exclamation"
       }
     ]);
+  }
+
+  numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 }

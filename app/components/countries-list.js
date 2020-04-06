@@ -59,4 +59,8 @@ export default class CountriesListComponent extends Component {
       "http://api.coronastatistics.live/countries/?sort="+item.query
     );
   }
+
+  numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 }
