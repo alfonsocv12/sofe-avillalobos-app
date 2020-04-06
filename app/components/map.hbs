@@ -8,8 +8,9 @@
         <div class="col-12 col-sm-6 col-md-12 col-lg-6">
           <div class="row pr-4 mt-3">
             {{#each this.mapOptions as |option|}}
-              <div class="col-3 text-sm btn btn-sm">
-                <a class="btn btn-sm btn-outline-{{option.color}}" onclick={{action "changeMap" option}}>
+              <div class="col-3 buttonPad">
+                <a class="col-12 btn btn-outline-{{option.color}} shadow-sm"
+                   onclick={{action "changeMap" option}}>
                   {{option.option}}
                 </a>
               </div>

@@ -277,19 +277,19 @@ export default class MapComponent extends Component {
 
   @tracked mapOptions = [
     {
-      "option": "cases",
+      "option": "Cases",
       "color": "primary"
     },
     {
-      "option": "deaths",
+      "option": "Deaths",
       "color": "danger"
     },
     {
-      "option": "critical",
+      "option": "Critical",
       "color": "warning"
     },
     {
-      "option": "recovered",
+      "option": "Recover",
       "color": "success"
     }
   ]

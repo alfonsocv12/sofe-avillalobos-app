@@ -1,6 +1,6 @@
 <div class="container">
   <div class="rown text-center">
-    <h1>Coronavirus App</h1>
+    <h1>{{fa-icon "viruses"}} CoronaApp</h1>
   </div>
   <div class="row mb-3">
     <DatosGlobales @globalInfo={{@model.global}}/>
@@ -9,11 +9,16 @@
     <CountriesList @title="Affected countries" @countries={{@model.countries}}/>
     <Map @countries={{@model.countries}}/>
   </div>
-  <div class="row mb-3">
-    <DailyGraphic/>
-    <CackeGraph @countries={{@model.countries}}/>
-  </div>
   <div class="row md-3">
     <CountryInfo @countries={{@model.countries}}/>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h3 class="text-warning">Global</h3>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <DailyGraphic/>
+    <CakeGraph @countries={{@model.countries}}/>
   </div>
 </div>

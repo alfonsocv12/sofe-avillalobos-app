@@ -7,8 +7,8 @@ import Fuse from 'fuse';
 
 am4core.useTheme(am4themes_animated);
 
-export default class CackeGraphComponent extends Component {
-  @tracked activateCackeChart = this.loadPieChart();
+export default class CakeGraphComponent extends Component {
+  @tracked activateCakeChart = this.loadPieChart();
 
   fuse = new Fuse(this.args.countries, {
     shouldSort: true,
@@ -25,7 +25,7 @@ export default class CackeGraphComponent extends Component {
     let tempData = this.fuse.list.slice();
     this.sortData(tempData, "cases");
     tempData = tempData.reverse();
-    let chart = am4core.create("cackeGraph", am4charts.PieChart);
+    let chart = am4core.create("cakeGraph", am4charts.PieChart);
     chart.data = tempData.slice(0, 10);
     let otherCases = tempData.slice(10, tempData.length);
     chart.data.push({
@@ -37,9 +37,6 @@ export default class CackeGraphComponent extends Component {
     pieSeries.dataFields.category = "country";
     pieSeries.labels.template.disabled = true;
     pieSeries.ticks.template.disabled = true;
-    pieSeries.slices.template.stroke = am4core.color("#313a46");
-    pieSeries.slices.template.strokeWidth = 1;
-    pieSeries.slices.template.strokeOpacity = 1;
     this.pieChart = chart;
   }
 

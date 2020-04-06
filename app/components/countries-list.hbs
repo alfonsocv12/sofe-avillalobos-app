@@ -6,11 +6,11 @@
         <div class="row">
           <div class="col-sm-8 col-md-12 col-lg-8 input-group mb-3">
             <input type="text" name="query"
-                   value="" class="form-control"
+                   value="" class="form-control shadow-sm"
                    placeholder="Search country" {{on "input" this.change}}>
           </div>
           <div class="col-sm-4 col-md-12 col-lg-4">
-            <BsDropdown @closeOnMenuClick={{false}} as |dd|>
+            <BsDropdown class="shadow-sm" @closeOnMenuClick={{false}} as |dd|>
               <dd.button class="forceOutline">
                 Sort By
               </dd.button>
@@ -41,8 +41,12 @@
               </div>
               <div class="row">
                 <p class="col-9 card-text" style="font-size: .8rem;">
-                  <span class="text-primary"> {{country.cases}} cases </span> &
-                  <span class="text-danger"> {{country.deaths}} Deaths</span>
+                  <span class="text-primary">
+                    <NumberCommas @number={{country.cases}}/> cases
+                  </span> &
+                  <span class="text-danger">
+                    <NumberCommas @number={{country.deaths}}/> Deaths
+                  </span>
                 </p>
                 <div class="col-3">
                   <div class="text-left text-danger little-bages">

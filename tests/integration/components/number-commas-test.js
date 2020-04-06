@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | cake-graph', function(hooks) {
+module('Integration | Component | number-commas', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<CakeGraph />`);
+    await render(hbs`<NumberCommas />`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      <CakeGraph>
+      <NumberCommas>
         template block text
-      </CakeGraph>
+      </NumberCommas>
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');

@@ -12,6 +12,7 @@ module.exports = function(defaults) {
       'files':[
           "charts",
           "themes/animated",
+          "themes/material",
           "maps",
           "geodata/worldLow"
       ]
