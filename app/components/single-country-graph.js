@@ -8,12 +8,13 @@ am4core.useTheme(am4themes_animated);
 
 export default class SingleCountryGraphComponent extends Component {
   @tracked country = this.args.country;
+  @tracked countryNoSpace = this.args.country.replace(/\s/g,'');
   @tracked data = this.args.data;
   @tracked activateSingleCakeGraph = this.loadPieChart();
 
   loadPieChart() {
     let chart = am4core.create(
-      this.country+"SingleCakeGraph", am4charts.PieChart
+      this.countryNoSpace+"SingleCakeGraph", am4charts.PieChart
     );
     chart.data.push({
       type: 'Recoveries',

@@ -11,6 +11,7 @@ export default class DailyGraphicComponent extends Component {
   @tracked activateLineChart = this.loadLineChart(false);
   timeLine = this.getTimeLineInformation();
   @tracked query = "";
+  @tracked queryNoSpaces = this.query.replace(/\s/g,'');
   caseData = [];
 
   async getTimeLineInformation(){
@@ -49,7 +50,7 @@ export default class DailyGraphicComponent extends Component {
       deaths: this.totalDeaths
     });
 
-    let chart = am4core.create("dailyGraph"+this.query, am4charts.XYChart);
+    let chart = am4core.create("dailyGraph"+this.queryNoSpaces, am4charts.XYChart);
     chart.numberFormatter.numberFormat = "#a";
     chart.numberFormatter.bigNumberPrefixes = [
       { "number": 1e+3, "suffix": "K" },

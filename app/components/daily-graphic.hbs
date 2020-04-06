@@ -2,7 +2,7 @@
   <div class="card shadow">
     <div class="card-body" style="height: 25rem;">
       <h4 class="card-title">
-        Infections History 
+        Infections History
         {{#if this.args.timeline}}
           {{this.args.timeline}}
         {{/if}}
@@ -10,7 +10,7 @@
       <div class="row ">
         <div class="col-12">
           {{#if this.args.timeline}}
-            <div id="dailyGraph{{this.args.timeline}}" style="height: 20rem;">{{this.activateLineChart}}</div>
+            <div id="dailyGraph{{this.queryNoSpaces}}" style="height: 20rem;">{{this.activateLineChart}}</div>
           {{else}}
             <div id="dailyGraphGlobal" style="height: 20rem;">{{this.activateLineChart}}</div>
           {{/if}}
