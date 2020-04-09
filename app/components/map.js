@@ -12,6 +12,7 @@ am4core.useTheme(am4themes_animated);
 
 export default class MapComponent extends Component {
   @tracked map = this.loadMap("cases");
+  @tracked chart = "";
 
   countryCodes = {
     'Afghanistan': 'AF',
@@ -300,8 +301,14 @@ export default class MapComponent extends Component {
   }
 
   loadMap(option){
+    option = option.toLowerCase();
+    if (this.mapChart) {
+      this.mapChart.dispose();
+    }
+
     let color = "#21AFDD";
-    if (option == "recovered") {
+    if (option == "recover") {
+      option = "recovered";
       color = "#10c469";
     } else if (option == "critical") {
       color = "#f9c851";
